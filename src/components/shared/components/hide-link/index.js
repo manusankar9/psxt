@@ -11,10 +11,10 @@ export default ({objectID}) => {
 
                 () => {
 
-                    return Consumer.upVote({objectID});
+                    return Consumer.hideNews({objectID});
 
                 }}
-        >^</p>
+        >[Hide]</p>
 
     </div>;
 

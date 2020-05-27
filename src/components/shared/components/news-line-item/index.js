@@ -1,15 +1,8 @@
-/* eslint-disable camelcase */
+import HideLink from '../hide-link';
 import NewsText from '../news-details-text';
 import React from 'react';
-import Votes from '../vote';
 import Upvote from '../up-vote';
-
-
-const HideLink = () => {
-
-    return <div>[Hide]</div>;
-
-};
+import Votes from '../vote';
 
 const Author = ({newsAuthor}) => {
 
@@ -22,9 +15,11 @@ const ElapsedText = ({time}) => {
 
 };
 
-const CommentCount = ({count})=>{
-    return <div>{count}</div>
-}
+const CommentCount = ({count}) => {
+
+    return <div>{count}</div>;
+
+};
 
 export default ({story}) => {
 
@@ -37,7 +32,7 @@ export default ({story}) => {
         <NewsText newsTitle = {title}/>
         <ElapsedText time ={created_at} />
         <Author newsAuthor = {author}/>
-        <HideLink />
+        <HideLink objectID = {objectID}/>
     </div>;
 
 };

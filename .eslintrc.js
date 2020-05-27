@@ -38,7 +38,6 @@ module.exports = {
         "semi": "error",
         "indent": [0,4],
         "brace-style": 1,
-        "camelcase": 1,
         "no-undef": 2,
         "no-undef-init": 2,
         "no-undefined": 2,
@@ -84,12 +83,6 @@ module.exports = {
         'brace-style': [
             2,
             '1tbs'
-        ],
-        camelcase: [
-            2,
-            {
-                properties: 'always'
-            }
         ],
         'comma-spacing': [
             2,

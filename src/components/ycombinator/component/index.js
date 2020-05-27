@@ -12,11 +12,11 @@ export default class Ycombinatore extends Component {
 
     render() {
 
-        const {hackerNews: {hits}, upVote} = this.props;
+        const {hackerNews: {hits}, upVote, hideNews} = this.props;
 
         return (
             <>
-                <HakerNews.Provider value={{upVote, hits}}>
+                <HakerNews.Provider value={{upVote, hits, hideNews}}>
                     <Table />
                 </HakerNews.Provider>
             </>
