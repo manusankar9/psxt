@@ -7,8 +7,7 @@ module.exports = {
         sourceType: 'module',
     },
     "extends": [
-        "react-app",
-        "plugin:jsx-a11y/recommended"
+        "react-app"
     ],
     "ecmaFeatures": {
         "arrowFunctions": true,
