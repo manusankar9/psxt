@@ -1,7 +1,7 @@
+import Actions from './actions';
 import HackerNews from './component';
 import { connect } from 'react-redux';
 import {getHackerNews} from './service';
-import hackerNewsAction from './actions/hacker-news';
 
 const mapStateToProps = state => {
 
@@ -21,7 +21,12 @@ const mapDispatchToProps = (dispatch, props) => {
 
             let data = await getHackerNews();
 
-            await dispatch(hackerNewsAction(data));
+            await dispatch(Actions.hackerNews(data));
+
+        },
+        upVote: (upVoteObj) => {
+
+            dispatch(Actions.upVote(upVoteObj));
 
         }
     };

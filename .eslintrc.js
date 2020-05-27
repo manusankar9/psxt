@@ -18,6 +18,7 @@ module.exports = {
         "defaultParams": true,
         "destructuring": true,
         "forOf": true,
+        "no-lone-blocks": 0,
         "generators": true,
         "modules": true,
         "objectLiteralComputedProperties": true,
