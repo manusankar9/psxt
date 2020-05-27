@@ -1,6 +1,6 @@
 import actions from '../actions-list';
 
-let initialState = {
+const initialState = {
     hits: []
 };
 
@@ -16,6 +16,20 @@ export default (state = initialState, action) => {
 
             return (item.objectID === action.payload.objectID) ?
                 {...item, points: item.points + 1} :
+                item;
+
+        });
+
+        return {...state, hits};
+
+    };
+
+    case actions.HIDE_NEWS: {
+
+        const hits = state.hits.map(item => {
+
+            return (item.objectID === action.payload.objectID) ?
+                {...item, isVisible: false} :
                 item;
 
         });
