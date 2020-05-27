@@ -13,8 +13,6 @@ export default class Ycombinatore extends Component {
 
     render() {
 
-        console.log(':::hackerNews:::', this.props.hackerNews.hits);
-
         return (
             <div>
                 Hacker News welcome

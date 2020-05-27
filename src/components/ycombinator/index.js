@@ -1,23 +1,31 @@
-import { connect } from "react-redux";
 import HackerNews from './component';
-import hackerNewsAction  from './actions/hacker-news';
+import { connect } from 'react-redux';
 import {getHackerNews} from './service';
+import hackerNewsAction from './actions/hacker-news';
 
-    const mapStateToProps = state => ({
-        
+const mapStateToProps = state => {
+
+    return {
+
         hackerNews: state.hackerNews.news
-    
-    });
 
-    const mapDispatchToProps = (dispatch, props) => ({
-    
-        getNews: async() =>{
-        
+    };
+
+};
+
+const mapDispatchToProps = (dispatch, props) => {
+
+    return {
+
+        getNews: async() => {
+
             let data = await getHackerNews();
 
             await dispatch(hackerNewsAction(data));
 
         }
-    });
-    
-export default connect(mapStateToProps, mapDispatchToProps)(HackerNews)
+    };
+
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(HackerNews);

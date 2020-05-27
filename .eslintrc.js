@@ -59,14 +59,11 @@ module.exports = {
         "comma-spacing": 2,
         "space-before-blocks": [2, "always"],
         "space-before-function-paren": [2, {"anonymous": "always", "named": "never"}],
-        "space-in-parens": [2, "never"]indent: ['error', 4, ],
+        "space-in-parens": [2, "never"],
+        "indent": ['error', 4, ],
         'eol-last': 2,
         quotes: ['error', 'single', ],
         semi: ['error', 'always', ],
-        'init-declarations': [
-            2,
-            'never'
-        ],
         'no-console': 2,
         'no-catch-shadow': 2,
         'no-delete-var': 2,
@@ -352,11 +349,6 @@ module.exports = {
         ],
         'arrow-body-style': ['error', 'always'],
         'arrow-spacing': ['error', { before: true, after: true }],
-        "sort-imports": ["error", {
-            "ignoreCase": true,
-            "ignoreDeclarationSort": true,
-            "ignoreMemberSort": true,
-            "memberSyntaxSortOrder": ["none", "all", "multiple", "single"]
-        }]
+        
     },
 };

@@ -1,5 +1,5 @@
 import hackerNews from './hacker-news';
 
-export default{
+export default {
     hackerNews
-}
+};
