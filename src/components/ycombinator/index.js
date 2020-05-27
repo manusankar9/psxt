@@ -3,25 +3,13 @@ import HackerNews from './component';
 import { connect } from 'react-redux';
 import {getHackerNews} from './service';
 
-const filterNews = (news) => {
+const filterNews = news => ({...news, hits: news.hits.filter(item => (typeof item.isVisible == 'undefined' && !item.isVisible))});
 
-    return {...news, hits: news.hits.filter(item => {
+const mapStateToProps = state => ({
 
-        return (typeof item.isVisible == 'undefined' && !item.isVisible);
+    hackerNews: filterNews(state.hackerNews.news)
 
-    })};
-
-};
-
-const mapStateToProps = state => {
-
-    return {
-
-        hackerNews: filterNews(state.hackerNews.news)
-
-    };
-
-};
+});
 
 const mapDispatchToProps = (dispatch, props) => {
 
@@ -29,9 +17,17 @@ const mapDispatchToProps = (dispatch, props) => {
 
         getNews: async() => {
 
-            const data = await getHackerNews();
+            try {
 
-            await dispatch(Actions.hackerNews(data));
+                const data = await getHackerNews();
+
+                await dispatch(Actions.hackerNews(data));
+
+            } catch (e) {
+
+                dispatch(Actions.error(e.message));
+
+            }
 
         },
         upVote: newsObjId => {
