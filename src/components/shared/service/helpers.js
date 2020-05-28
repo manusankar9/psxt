@@ -5,3 +5,5 @@ export const updateLocalStorage = (objectID, item) => {
     return item;
 
 };
+
+export const buildGraphData = (hits) => hits.map(item => ({name: item.objectID, polls: item.points}));
