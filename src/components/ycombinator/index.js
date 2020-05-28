@@ -15,11 +15,11 @@ const mapDispatchToProps = (dispatch, props) => {
 
     return {
 
-        getNews: async() => {
+        getNews: async(params) => {
 
             try {
 
-                const data = await getHackerNews();
+                const data = await getHackerNews(params);
 
                 await dispatch(Actions.hackerNews(data));
 
