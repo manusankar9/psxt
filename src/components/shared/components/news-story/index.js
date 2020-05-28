@@ -1,3 +1,4 @@
+import './style.css';
 import React, {useContext} from 'react';
 import Graph from '../graph';
 import HakerNewscontext from '../../../ycombinator/component/haker-news-context';
@@ -11,7 +12,9 @@ const BuildLinteItems = () => {
 
     return Consumer.hits.map(item => {
 
-        return <LineItem key={item.objectID} story = {item} />;
+        return (<div className = 'news-table-body'>
+            <LineItem key={item.objectID} story = {item} />;
+            </div>);
 
     });
 
