@@ -18,14 +18,9 @@ const BuildLinteItems = () => {
 
 };
 
-export default () => {
-
-    return <Table>
-
-        <Header />
-        <BuildLinteItems />
-        <footer><Link to={'/search?tags=front_page'}>Previous</Link> | <Link to={`/search?query=page${2}`}>Next</Link> </footer>
-        <Graph />
-    </Table>;
-
-};
+export default () => <Table>
+    <Header />
+    <BuildLinteItems />
+    <footer><Link to={'/search?tags=front_page'}>Previous</Link> | <Link to={`/search?query=page${2}`}>Next</Link> </footer>
+    <Graph />
+</Table>;
