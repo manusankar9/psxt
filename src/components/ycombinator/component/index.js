@@ -6,7 +6,16 @@ export default class Ycombinatore extends Component {
 
     componentWillMount() {
 
-        this.props.getNews();
+        this.props.getNews('?tags=front_page');
+
+    }
+    componentWillReceiveProps(preProps) {
+
+        if (preProps.location.search !== this.props.location.search) {
+
+            this.props.getNews(preProps.location.search);
+
+        }
 
     }
 
