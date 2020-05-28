@@ -1,17 +1,18 @@
 import './style.css';
-import { combineReducers, compose, createStore } from 'redux';
+import { Route, Switch } from 'react-router-dom'
 import App from './components/ycombinator';
+import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import React from 'react';
-import hackerNews from './components/ycombinator/reducer';
 import { render } from 'react-dom';
-
-const store = createStore(combineReducers({
-    hackerNews
-}), compose(
-    window.devToolsExtension ? window.devToolsExtension() : f => f
-));
+import store from './store-machine';
 
 render(<Provider store={store}>
-    <App />
+    <BrowserRouter>
+        <main>
+            <Switch>
+                <Route path='/' component={App}/>
+            </Switch>
+        </main>
+    </BrowserRouter>
 </Provider>, document.getElementById('root'));
