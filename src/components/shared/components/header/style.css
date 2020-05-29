@@ -1,19 +1,28 @@
-.news-table{
+.news-table-header{
     display: flex;
     background-color: #ff742b;
     color:white;
     font-weight: bold;
     font-family: monospace;
+    box-sizing: border-box;
+    font-family: Verdana,Geneva,sans-serif;
+    height: auto;
+    list-style:none ;
+    padding:5px;
+    padding: 0px;
+    margin: 0px;
 }
-.div1{
-    padding:5px
+.li1{
+    background-color: transparent;
+    padding:20px;
+    font-family: Verdana,Geneva,sans-serif;
 }
-.div2{
-    padding:5px
+.li2{
+    padding:4px
 }
-.div3{
-    padding:5px
+.li3{
+    padding:20px
 }
-.div4{
-    padding:5px
+.li4{
+    padding:18px
 }

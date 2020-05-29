@@ -11,24 +11,19 @@ const BuildLinteItems = () => {
 
     const Consumer = useContext(HakerNewscontext);
 
-    return Consumer.hits.map(item => {
-
-        return (<div className = 'news-table-body'>
-            <LineItem key={item.objectID} story = {item} />;
-            </div>);
-
-    });
+    return Consumer.hits.map(item =><LineItem key={item.objectID} story = {item} />)
 
 };
 
 export default () => {
 
-    return <Table>
-
-        <Header />
-        <BuildLinteItems />
-        <footer><Link to={'/search?tags=front_page'}>Previous</Link> | <Link to={`/search?query=page${2}`}>Next</Link> </footer>
-        <Graph />
-    </Table>;
+    return (<div className = 'container'>
+        <Table>
+            <Header className = 'head-container'/>
+            <BuildLinteItems />
+            <footer><Link to={'/search?tags=front_page'}>Previous</Link> | <Link to={`/search?query=page${2}`}>Next</Link> </footer>
+            <Graph />
+        </Table>;
+    </div>);
 
 };

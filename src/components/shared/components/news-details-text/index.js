@@ -2,9 +2,9 @@ import React from 'react';
 
 export default ({newsTitle}) => {
 
-    return <div>
-        <p>{newsTitle}</p>
+    return <>
+        <p className = 'NewsText'>{newsTitle}</p>
 
-    </div>;
+    </>;
 
 };
