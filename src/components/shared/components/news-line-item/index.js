@@ -1,4 +1,4 @@
-import './style.css';
+import './style-guides/styleBody.scss';
 import HideLink from '../hide-link';
 import NewsText from '../news-details-text';
 import React from 'react';
@@ -36,17 +36,20 @@ export default ({story}) => {
         <CommentCount count = {num_comments}/>
         <Votes count = {points}/>
         <Upvote objectID = {objectID}/>
-        <NewsText newsTitle = {title}/>
-        <div className = 'linkContainer'>
-            <ul className = 'linkContainer'>
-                <nav>
-                    <Url url = {url}/>
-                </nav>
-                <Author newsAuthor = {author}/>
-                <ElapsedText time ={created_at} />
-                <HideLink objectID = {objectID}/>
-            </ul>
-        </div>
+        <ul className = 'double'>
+            <NewsText newsTitle = {title}/>
+            <li className = 'linkContainer'>
+                <ul className = 'linkContainer'>
+                    <nav>
+                        <Url url = {url}/>
+                    </nav>
+                    <Author newsAuthor = {author}/>
+                    <ElapsedText time ={created_at} />
+                    <HideLink objectID = {objectID}/>
+                </ul>
+            </li>
+
+        </ul>
     </article>;
 
 };

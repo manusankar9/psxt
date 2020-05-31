@@ -1,0 +1,18 @@
+.news-table-header{
+    display: flex;
+    background-color: #ff742b;
+    color:white;
+    font-weight: bold;
+    > .li1{
+        padding:20px;
+    }
+    > .li2{
+        padding:4px;
+    }
+    > .li3{
+         padding:20px;
+    }
+    > .li4{
+        padding:18px;
+    }
+}

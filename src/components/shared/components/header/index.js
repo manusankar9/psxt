@@ -1,4 +1,5 @@
-import './style.css';
+// import './style.css';
+import './style-guides/stylesHeader.scss';
 import React from 'react';
 
 export default (props) => {

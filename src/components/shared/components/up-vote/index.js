@@ -6,7 +6,7 @@ export default ({objectID}) => {
     const Consumer = useContext(HakerNewscontext);
 
     return <>
-        <p className = 'Upvote'
+        <li className = 'Upvote'
             onClick={
 
                 () => {
@@ -14,7 +14,7 @@ export default ({objectID}) => {
                     return Consumer.upVote({objectID});
 
                 }}
-        >^</p>
+        >^</li>
 
     </>;
 

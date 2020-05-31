@@ -1,4 +1,4 @@
-import './style.css';
+import './style.scss';
 import React, {useContext} from 'react';
 import Graph from '../graph';
 import HakerNewscontext from '../../../ycombinator/component/haker-news-context';
@@ -11,19 +11,18 @@ const BuildLinteItems = () => {
 
     const Consumer = useContext(HakerNewscontext);
 
-    return Consumer.hits.map(item =><LineItem key={item.objectID} story = {item} />)
+    return Consumer.hits.map(item => <LineItem key={item.objectID} story = {item} />);
 
 };
 
-export default () => {
+export default () => <div>
+    <Table>
+        <Header />
+        <BuildLinteItems />
+        <footer className='nav-pre-next'>
+            <Link to={'/search?tags=front_page'} className = 'prev'>Previous</Link> | <Link to={`/search?query=page${2}`} className = 'next'>Next</Link>
+        </footer>
+        <Graph />
+    </Table>;
+</div>;
 
-    return (<div className = 'container'>
-        <Table>
-            <Header className = 'head-container'/>
-            <BuildLinteItems />
-            <footer><Link to={'/search?tags=front_page'}>Previous</Link> | <Link to={`/search?query=page${2}`}>Next</Link> </footer>
-            <Graph />
-        </Table>;
-    </div>);
-
-};

@@ -1,0 +1,83 @@
+@import "./variables";
+
+@mixin displayFlex() {
+  display: $flex;
+}
+
+article:nth-child(even) {
+  background-color: silver;
+}
+
+ul {
+  margin: 0px;
+  padding: 0px;
+  font-family: $fontFamily;
+  list-style: $none;
+}
+
+@media screen and (min-width: 1200px) {
+  .double {
+    width: calc(85% - 10px);
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .double {
+    width: calc(85% - 10px);
+    margin: 0 auto;
+    flex-direction: column;
+  }
+}
+
+.storyContainer {
+  @include displayFlex();
+  color: $color;
+  padding: 10px 0px 5px 50px;
+  list-style: $none;
+  font-family: $fontFamily;
+  > .CommentCount {
+    width: 80px;
+  }
+  > .votes {
+    width: 80px;
+  }
+  > .double {
+    @include displayFlex();
+    color: $color;
+    & .voteContainer {
+      @include displayFlex();
+      color: $color;
+      padding: 0px 0px 0px 22px;
+      list-style: $none;
+      font-family: $fontFamily;
+    }
+    & .linkContainer {
+      @include displayFlex();
+      color: $color;
+      padding: $paddingRight;
+
+      & .Url {
+        @extend .ElapsedText;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+      & .Author {
+        font-size: $fontSize;
+        color: black;
+        padding-right: $paddingRight;
+      }
+      & .ElapsedText {
+        font-size: $fontSize;
+        color: $colorInnerTxt;
+        padding-right: $paddingRight;
+      }
+      & .HideLink {
+        font-size: $fontSize;
+        color: $color;
+      }
+    }
+  }
+}
