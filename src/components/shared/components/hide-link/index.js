@@ -5,8 +5,8 @@ export default ({objectID}) => {
 
     const Consumer = useContext(HakerNewscontext);
 
-    return <div>
-        <p
+    return <>
+        <li className = 'HideLink'
             onClick={
 
                 () => {
@@ -14,8 +14,8 @@ export default ({objectID}) => {
                     return Consumer.hideNews({objectID});
 
                 }}
-        >[Hide]</p>
+        >[Hide]</li>
 
-    </div>;
+    </>;
 
 };

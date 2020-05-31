@@ -2,9 +2,9 @@ import React from 'react';
 
 export default ({newsTitle}) => {
 
-    return <div>
-        <p>{newsTitle}</p>
+    return <>
+        <li className = 'voteContainer'>{newsTitle}</li>
 
-    </div>;
+    </>;
 
 };

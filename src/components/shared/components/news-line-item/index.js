@@ -1,3 +1,4 @@
+import './style-guides/styleBody.scss';
 import HideLink from '../hide-link';
 import NewsText from '../news-details-text';
 import React from 'react';
@@ -6,33 +7,49 @@ import Votes from '../vote';
 
 const Author = ({newsAuthor}) => {
 
-    return <div>{newsAuthor}</div>;
+    return <li className = 'Author'>{newsAuthor}</li>;
 
 };
 const ElapsedText = ({time}) => {
 
-    return <div> {time} ago</div>;
+    return <li className = 'ElapsedText'> {time} ago</li>;
 
 };
 
 const CommentCount = ({count}) => {
 
-    return <div>{count}</div>;
+    return <li className = 'CommentCount'>{count}</li>;
+
+};
+
+const Url = ({url}) => {
+
+    return <a className = 'Url'>{url}</a>;
 
 };
 
 export default ({story}) => {
 
-    const {author, created_at, title, points, num_comments, objectID} = story;
+    const {author, created_at, title, points, num_comments, objectID, url} = story;
 
-    return <div>
+    return <article className = 'storyContainer'>
         <CommentCount count = {num_comments}/>
         <Votes count = {points}/>
         <Upvote objectID = {objectID}/>
-        <NewsText newsTitle = {title}/>
-        <ElapsedText time ={created_at} />
-        <Author newsAuthor = {author}/>
-        <HideLink objectID = {objectID}/>
-    </div>;
+        <ul className = 'double'>
+            <NewsText newsTitle = {title}/>
+            <li className = 'linkContainer'>
+                <ul className = 'linkContainer'>
+                    <nav>
+                        <Url url = {url}/>
+                    </nav>
+                    <Author newsAuthor = {author}/>
+                    <ElapsedText time ={created_at} />
+                    <HideLink objectID = {objectID}/>
+                </ul>
+            </li>
+
+        </ul>
+    </article>;
 
 };

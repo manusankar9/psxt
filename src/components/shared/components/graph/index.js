@@ -14,7 +14,7 @@ export default () => {
     return (
         <section className='graph-warpper'>
             <LineChart
-                width={1200}
+                width={1800}
                 height={300}
                 data={graphData}
                 fontFamily='sans-serif'

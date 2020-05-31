@@ -1,10 +1,3 @@
 import React from 'react';
 
-export default ({count}) => {
-
-    return <div>
-        <p>{count} ::</p>
-
-    </div>;
-
-};
+export default ({count}) => <li className = 'votes' >{count}</li>;

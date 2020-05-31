@@ -1,0 +1,31 @@
+.nav-pre-next{
+    
+    display: flex;
+    justify-content: flex-end;
+    font-weight: bold;
+    padding: 3px 0 9px 0;
+    color:#ff742b;
+    font-family:  Verdana, Geneva, sans-serif;
+    
+    > .next{
+        padding-left: 10px;
+        
+    }
+    > .prev{
+        padding-right: 10px;
+        
+    }
+
+    a {
+        text-decoration: none;
+        color:#ff742b;
+
+        &:hover {
+            text-decoration: underline;
+        }
+        
+    }
+    
+}
+
+
